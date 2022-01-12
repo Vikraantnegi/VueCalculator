@@ -52,6 +52,65 @@ export default {
     operator: '',
     history: '',
   }),
+  methods: {
+    clear: function(){
+      this.current = ''
+      this.previous = ''
+      this.history = ''
+      this.operator = ''
+    },
+    backSpace: function(){
+      this.current = this.current.slice(0, -1)
+    },
+    percentage: function(){
+      this.current = `${parseFloat(this.current)/100}`;
+    },
+    pushNumber: function(number){
+      if(this.current === 'Infinity' || this.current === 'NaN'){
+        this.current = number  
+      } else{
+        if(number === '.'){
+          if(this.current.indexOf('.') === -1){
+            this.current += number
+          }
+        } else {
+          this.current = this.current + number
+        }
+      }
+    },
+    add: function(){
+      this.operator = '+';
+      this.setPreviousValue();
+    },
+    subtract: function(){
+      this.operator = '-';
+      this.setPreviousValue();
+    },
+    multiply: function(){
+      this.operator = '*';
+      this.setPreviousValue();
+    },
+    divide: function(){
+      this.operator = '/';
+      this.setPreviousValue();
+    },
+    finalResult: function(){
+      this.history =  this.previous + ' ' + this.operator + ' ' + this.current;
+      if(this.operator === '+'){
+        this.current = `${parseFloat(this.previous) + parseFloat(this.current)}`;
+      } else if(this.operator === '-'){
+        this.current = `${parseFloat(this.previous) - parseFloat(this.current)}`;
+      } else if(this.operator === '*'){
+        this.current = `${parseFloat(this.previous) * parseFloat(this.current)}`;
+      } else if(this.operator === '/'){
+        this.current = `${parseFloat(this.previous) / parseFloat(this.current)}`;
+      }
+    },
+    setPreviousValue: function(){
+      this.previous = this.current;
+      this.current = '';
+    },
+  }
 }
 </script>
 
