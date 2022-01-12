@@ -1,12 +1,27 @@
 <template>
   <div class="calculator">
-    
+    <div class="workArea">
+      <div class="tabBar">
+        <i class="fas fa-calculator calc"></i>
+        <i class="fas fa-ellipsis-v dots"></i>
+      </div>
+      <div class="calculation">
+        <div class="operation">{{ history }}</div>
+        <div class="result"> {{ current || 0 }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Calculator',
+  data: () => ({
+    previous: '',
+    current: '',
+    operator: '',
+    history: '',
+  }),
 }
 </script>
 
