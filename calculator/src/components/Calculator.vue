@@ -98,5 +98,45 @@ export default {
     color: #FFFFFF;
     margin-bottom: 12px;
   }
-
+  .buttonsArea{
+    padding-top: 20px;
+    border-top: 1px solid #5A5A5A;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .buttonColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .buttonCalc{
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  .equalButton{
+    background: #FF762D;
+    border-radius: 18px;
+  }
+  .clearButton, .backButton{
+    color: #FF762D;
+  }
+  .backButton, .operation{
+    font-size: 24px;
+  }
+  .calc{
+    font-size: 40px;
+  }
+  .dots{
+    font-size: 20px;
+  }
 </style>
