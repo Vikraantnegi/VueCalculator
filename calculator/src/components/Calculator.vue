@@ -27,18 +27,46 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+  .calculator{
+    width: 375px;
+    height: 800px;
+    background: #1F1F1F;
+    padding: 24px;
+    border-radius: 30px;
+  }
+  .workArea{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tabBar{
+    margin-top: 60px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .calculation{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .operation{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    text-align: right;
+    color: #AAAAAA;
+  }
+  .result{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    text-align: right;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+  
 </style>
